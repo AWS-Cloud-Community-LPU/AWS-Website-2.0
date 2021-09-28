@@ -1,0 +1,81 @@
+.side-nav {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 5.5rem;
+  border-radius: 8px;
+}
+
+/* ! Navbar */
+.home {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.blogs {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.events {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.about {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.contact {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.recruitment {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+/* ! Side Navbar */
+
+.side-home {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 6.5rem;
+  border-radius: 8px;
+}
+
+.side-blogs {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 6.6rem;
+  border-radius: 8px;
+}
+
+.side-events {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 6.4rem;
+  border-radius: 8px;
+}
+
+.side-about {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 5.7rem;
+  border-radius: 8px;
+}
+
+.side-contact {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 5.3rem;
+  border-radius: 8px;
+}
+
+.side-recruitment {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 5rem;
+  border-radius: 8px;
+}
