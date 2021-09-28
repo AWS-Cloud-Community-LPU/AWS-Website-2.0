@@ -1,5 +1,6 @@
 import { Box, Container, Heading, Text, SimpleGrid, Center, Image, Input, Textarea, Button } from "@chakra-ui/react";
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
+import React from "react";
 
 const Contact = () => {
     return (

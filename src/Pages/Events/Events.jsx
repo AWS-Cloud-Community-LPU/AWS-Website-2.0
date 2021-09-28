@@ -1,6 +1,7 @@
 import { Box, Container, Center, Heading, Text, Button, Image, SimpleGrid } from "@chakra-ui/react";
 import EventImg from "../../Assets/Home/EC2.jfif";
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
+import React from "react";
 
 const Events = () => {
     return (

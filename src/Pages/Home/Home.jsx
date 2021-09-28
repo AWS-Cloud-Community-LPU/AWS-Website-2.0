@@ -1,4 +1,5 @@
 import { Container, Box, SimpleGrid, Heading, Text, Button, Image, Center } from "@chakra-ui/react";
+import React from "react";
 import HillImg from "../../Assets/Home/hill.png";
 import HouseImg from "../../Assets/Home/house.png";
 import SunImg from "../../Assets/Home/sun.png";

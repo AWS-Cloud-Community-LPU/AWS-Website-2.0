@@ -1,15 +1,17 @@
 {
   "name": "aws-website-2.0",
-  "version": "0.1.0",
-  "private": true,
+  "version": "2.0.0",
+  "description": "AWS Cloud Community's New Official Website",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "^1.0.20",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "^1.1.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -24,6 +26,16 @@
       "react-app/jest"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AWS-Cloud-Community-LPU/AWS-Website-2.0.git"
+  },
+  "author": "sanyogchangmai, garvit-joshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AWS-Cloud-Community-LPU/AWS-Website-2.0/issues"
+  },
+  "homepage": "https://github.com/AWS-Cloud-Community-LPU/AWS-Website-2.0#readme",
   "browserslist": {
     "production": [
       ">0.2%",

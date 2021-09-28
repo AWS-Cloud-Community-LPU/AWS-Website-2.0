@@ -1,7 +1,7 @@
 import { Box, Container, SimpleGrid, Heading, Text, Input, Textarea, Button, Image, Center, Link } from "@chakra-ui/react";
 import { VStack } from "@chakra-ui/react";
 import UnderImg from "../../Assets/Footer/under.png";
-import FooterImg from "../../Assets/Footer/footer.png";
+import React from "react";
 
 const Footer = () => {
     return (

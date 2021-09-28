@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+//import React, { Component }  from 'react';
 import "./Navbar.css";
 import { Container, Box, Text, Image, IconButton, Center } from "@chakra-ui/react";
 import {
@@ -123,7 +124,6 @@ const Navbar = () => {
             <IconButton onClick={onOpen} aria-label="Search database" icon={<HamburgerIcon w={6} h={6} />} />
             </Box>
 
-            <>
             <Drawer
                 isOpen={isOpen}
                 placement="left"
@@ -183,7 +183,7 @@ const Navbar = () => {
                 </DrawerFooter>
                 </DrawerContent>
             </Drawer>
-            </>
+
 
             </Container>
         </Box>

@@ -1,7 +1,8 @@
-import { Box, Container, Heading, SimpleGrid, Center, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid, Image, Text, Button } from "@chakra-ui/react";
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
 import EventImg from "../../Assets/Home/EC2.jfif";
+import React from "react";
 
 const Blogs = () => {
     return (

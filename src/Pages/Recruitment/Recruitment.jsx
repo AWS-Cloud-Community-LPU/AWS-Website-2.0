@@ -1,5 +1,6 @@
 import { Box, Container, Input, Textarea, Button, Heading, Text } from "@chakra-ui/react";
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
+import React from "react";
 
 const Recruitment = () => {
     return (

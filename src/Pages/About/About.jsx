@@ -1,4 +1,5 @@
 import { Box, Container, Tab, Tabs, TabList,TabPanels, TabPanel, Heading, Text, Image } from "@chakra-ui/react";
+import React from "react";
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
 import CommunityImg from "../../Assets/About/community.jpg";
 import AllMembers from "../../Components/Members/All";
