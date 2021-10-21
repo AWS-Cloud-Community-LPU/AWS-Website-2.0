@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react";
 import { Container, Box, SimpleGrid, Heading, Text, Button, Image, Center } from "@chakra-ui/react";
-import React from "react";
 import HillImg from "../../Assets/Home/hill.png";
 import HouseImg from "../../Assets/Home/house.png";
 import SunImg from "../../Assets/Home/sun.png";
@@ -8,9 +8,23 @@ import AWSImg from "../../Assets/Home/aws11.jpg";
 import CloudComputingImg from "../../Assets/Home/aws22.jpg";
 import EventImg from "../../Assets/Home/EC2.jfif";
 import ResourceImg from "../../Assets/Home/resources.png";
+import { db } from "../../firebase";
 
 
 const Home = () => {
+
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        db.collection("events")
+        .orderBy("time","desc")
+        .get()
+        .then((snapshot) => {
+            console.log(snapshot.docs[0].data());
+            setData(snapshot.docs[0].data());
+        })
+    },[])
+
     return (
         <Box mt={["0","10", "20"]} mb="14">
             <Container maxW="container.xl">
@@ -134,6 +148,7 @@ const Home = () => {
             </Box>
             </SimpleGrid>
 
+            { data &&
             <Box my="28">
             <Text
             bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -147,27 +162,30 @@ const Home = () => {
             </Text>
 
             <Center>
-            <Image src={ EventImg } fallbackSrc="https://via.placeholder.com/300" />
+            <iframe width="100%" height="350" src={ data.embedLink } 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; 
+            gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
             </Center>
 
             <Box mt="10">
-                <Heading ml={["auto", "28"]} my="5" color='orange.400' fontSize="3xl">AWS Engage</Heading>
+                <Heading ml={["auto", "28"]} my="5" color='orange.400' fontSize="3xl">
+                { data.title } 
+                </Heading>
                 <Text justifyContent="justify" mx={["auto", "28"]}>
-                We, at AWS Cloud Community LPU, believe that knowledge shared 
-                is knowledge earned. Accepting and giving is the way of living. 
-                It keeps you updated in today's dynamic industry and can make you 
-                tomorrow's leader.
+                { data.body } 
                 </Text>
                 <Center mt="8">
-                <Button w="9rem" mr="4" colorScheme="orange" variant="solid">
-                    Attend event
+                <a href={ data.link } target="blank" rel="noopener">
+                <Button mr="2" w="9rem" colorScheme="orange">
+                    View
                 </Button>
-                <Button w="9rem" colorScheme="orange" variant="outline">
-                    View all events
-                </Button>
-                    </Center>  
+                </a>
+                </Center>  
             </Box>
-            </Box>
+            </Box>}
 
 
             <Box my="44">

@@ -1,9 +1,29 @@
+import React, { useEffect, useState } from "react";
 import { Box, Container, Center, Heading, Text, Button, Image, SimpleGrid } from "@chakra-ui/react";
 import EventImg from "../../Assets/Home/EC2.jfif";
 import BackgroundImg from "../../Assets/Blogs/tour-bg.png";
-import React from "react";
+import { db } from "../../firebase";
 
 const Events = () => {
+
+    const [data, setData] = useState("");
+    const [featuredEvent, setFeaturedEvent] = useState("");
+
+    // ! To fetch data from DB
+    useEffect(() => {
+        db.collection("blogs")
+        .orderBy("time","desc")
+        .get()
+        .then((snapshot) => {
+            console.log(snapshot);
+            setData(snapshot);
+            setFeaturedEvent(snapshot.docs[0].data());
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    },[])
+
     return (
         <Box mt="10" mb="20">
             <Container maxW="container.xl">
@@ -22,7 +42,7 @@ const Events = () => {
             </Text>
             </Box>
 
-
+            { featuredEvent &&
             <Box my="28">
             <Text
             bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -36,55 +56,80 @@ const Events = () => {
             </Text>
 
             <Center>
-            <Image src={ EventImg } fallbackSrc="https://via.placeholder.com/300" />
+            <iframe width="100%" height="350" src={ featuredEvent.embedLink } 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; 
+            gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
             </Center>
 
             <Box mt="10">
-                <Heading ml={["auto", "28"]} my="5" color='orange.400' fontSize="3xl">AWS Engage</Heading>
+                <Heading ml={["auto", "28"]} my="5" color='orange.400' fontSize="3xl">
+                { featuredEvent.title } 
+                </Heading>
                 <Text justifyContent="justify" mx={["auto", "28"]}>
-                We, at AWS Cloud Community LPU, believe that knowledge shared 
-                is knowledge earned. Accepting and giving is the way of living. 
-                It keeps you updated in today's dynamic industry and can make you 
-                tomorrow's leader.
+                { featuredEvent.body } 
                 </Text>
                 <Center mt="8">
-                <Button w="9rem" mr="4" colorScheme="orange" variant="solid">
-                    Attend event
+                <a href={ featuredEvent.link } target="blank" rel="noopener">
+                <Button mr="2" w="9rem" colorScheme="orange">
+                    View
                 </Button>
-                <Button w="9rem" colorScheme="orange" variant="outline">
-                    View all events
-                </Button>
-                    </Center>  
+                </a>
+                </Center>  
             </Box>
-            </Box>
+            </Box>}
 
             <Heading fontSize="4xl" mb="8" color="orange.400">
                 Our Past Events
             </Heading>
 
-            <SimpleGrid mb="10" minChildWidth="18rem" spacing="40px">
+            <Box>
 
-            <Box height="auto" boxShadow="base">
-                <Center>
-                <iframe width="100%" height="160" src="https://www.youtube.com/embed/3ajPXlZJszM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </Center>
+            { data &&
+                <>
+                { data.docs.map( result => (
+                <Box 
+                key = { result.key }
+                boxShadow="2xl" 
+                borderRadius="lg" bg="#ffffff" my="6" 
+                mx={["0","6"]} display="flex" 
+                flexWrap={["wrap", "wrap", "nowrap"]} 
+                p="2">      
 
-                <Box p="4">
-                    <Text mb="2">28 May 2021</Text>
-                    <Heading fontSize="2xl">
-                    Serverless in Full Stack Development
-                    </Heading>
-                    <Text my="3" fontSize="sm">
-                    AWS Cloud Community of LPU in collaboration with AWS User Group 
-                    Jaipur - Rajasthan is hosting a webinar on “Serverless in Full 
-                    Stack Development.Our guest speaker for this session is Suman 
-                    Debnath, Sr developer advocate, Amazon Web Services (AWS).
-                    </Text>
-                    <Button w="9rem" colorScheme="orange">View event</Button>
+                    <Box w={["100%", "100%", "40%"]}>
+
+                    <iframe width="100%" height="100%" src={ result.data().embedLink } 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; 
+                    clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+
+                    {/* <Image boxSize="100%" src="https://awscloudcommunitylpu.netlify.app/images/blog/EC2.jfif" alt="Dan Abramov" /> */}
+                    
+                    </Box>
+
+                    <Box w={["100%", "100%", "60%"]} mx="3" pb="4" px={["auto", "auto", "6"]}>
+                        <Heading mt="4" fontSize="3xl">{ result.data().title }</Heading>
+                        <Text my="2" color="orange.400">Date { result.data().date }</Text>
+                        <Text fontSize="sm" my="4">
+                        { result.data().body }
+                        </Text>
+
+                        <a href={ result.data().link } target="blank" rel="noopener">
+                        <Button mr="2" w="7rem" colorScheme="orange">
+                            View
+                        </Button>
+                        </a>
+                    </Box>
+
                 </Box>
-            </Box>
+                ))}
+                </>}
 
-            </SimpleGrid>
+            </Box>
 
             
 
