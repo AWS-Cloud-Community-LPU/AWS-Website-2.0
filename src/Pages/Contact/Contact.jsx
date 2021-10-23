@@ -22,6 +22,7 @@ const Contact = () => {
 
             <SimpleGrid my="20" minChildWidth="120px" spacing={8}>
 
+            <a href="https://www.linkedin.com/company/aws-cloud-community-lpu/mycompany/">
             <Box p="4" height="auto">
                 <Center>
                 <Image
@@ -31,7 +32,9 @@ const Contact = () => {
                 </Center>
                 <Text textAlign="center">Linkedin</Text>
             </Box>
+            </a>
 
+            <a href="https://www.youtube.com/channel/UCmnQggVDZY8ht6UYekmzQlg/featured">
             <Box p="4" height="auto">
                 <Center>
                 <Image
@@ -41,7 +44,9 @@ const Contact = () => {
                 </Center>
                 <Text textAlign="center">Youtube</Text>
             </Box>
+            </a>
 
+            <a href="https://www.instagram.com/awscloudcommunity_lpu/">
             <Box p="4" height="auto">
                 <Center>
                 <Image
@@ -51,7 +56,9 @@ const Contact = () => {
                 </Center>
                 <Text textAlign="center">Instagram</Text>
             </Box>
+            </a>
 
+            <a href="https://www.facebook.com/AWSCloudCommunityLPU">
             <Box p="4" height="auto">
                 <Center>
                 <Image
@@ -61,7 +68,9 @@ const Contact = () => {
                 </Center>
                 <Text textAlign="center">Facebook</Text>
             </Box>
+            </a>
 
+            <a href="https://twitter.com/AWSCCLPU">
             <Box p="4" height="auto">
                 <Center>
                 <Image
@@ -72,7 +81,9 @@ const Contact = () => {
                 </Center>
                 <Text textAlign="center">Twitter</Text>
             </Box>
+            </a>
 
+            <a href="https://awscloudcommunity-lpu.medium.com/">
             <Box p="6" height="auto">
                 <Center>
                 <Image
@@ -83,6 +94,7 @@ const Contact = () => {
                 </Center>
                 <Text mt="2" textAlign="center">Medium</Text>
             </Box>
+            </a>
 
             </SimpleGrid>
 

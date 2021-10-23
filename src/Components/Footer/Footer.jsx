@@ -2,6 +2,8 @@ import { Box, Container, SimpleGrid, Heading, Text, Input, Textarea, Button, Ima
 import { VStack } from "@chakra-ui/react";
 import UnderImg from "../../Assets/Footer/under.png";
 import React from "react";
+import Jeff from "../../Assets/Footer/jeff.jpg";
+import Andy from "../../Assets/Footer/andy.jpg";
 
 const Footer = () => {
     return (
@@ -31,11 +33,10 @@ const Footer = () => {
                     <Image
                         boxSize="80px"
                         objectFit="cover"
-                        src="https://bit.ly/sage-adebayo"
-                        alt="Segun Adebayo"
+                        src={ Jeff }
                     />
                     <Text px="6" fontSize="14px">
-                    One of the only ways to get out of a tight box is to invent your way out.
+                    "One of the only ways to get out of a tight box is to invent your way out."
                     - Jeff Bezos
                     </Text>
                     </Box>
@@ -43,11 +44,10 @@ const Footer = () => {
                     <Image
                         boxSize="80px"
                         objectFit="cover"
-                        src="https://bit.ly/sage-adebayo"
-                        alt="Segun Adebayo"
+                        src={ Andy }
                     />
                     <Text px="6" fontSize="14px">
-                    If you double the number of expirements you do per year you're going to double your inventiveness.
+                    "If you double the number of expirements you do per year you're going to double your inventiveness."
                     - Andy Jassy
                     </Text>
                     </Box>
@@ -107,19 +107,19 @@ const Footer = () => {
             </SimpleGrid>
 
             <Center mt="24" fontSize="24px">
-                <Link href="www.linkedin.com" color="#0077b5" mx="3" bg="gray.100" px="3.5" py="1.5" borderRadius="50%">
+                <Link href="https://www.linkedin.com/company/aws-cloud-community-lpu/mycompany/" color="#0077b5" mx="3" bg="gray.100" px="3.5" py="1.5" borderRadius="50%">
                 <i className="fab fa-linkedin-in"></i>
                 </Link>
 
-                <Link color="#FF0000" mx="3" bg="gray.100" px="2.5" py="1.5" borderRadius="50%">
+                <Link href="https://www.youtube.com/channel/UCmnQggVDZY8ht6UYekmzQlg/featured" color="#FF0000" mx="3" bg="gray.100" px="2.5" py="1.5" borderRadius="50%">
                 <i className="fab fa-youtube"></i>
                 </Link>
 
-                <Link color="#E1306C;" mx="3" bg="gray.100" px="3.5" py="1.5" borderRadius="50%">
+                <Link href="https://www.instagram.com/awscloudcommunity_lpu/" color="#E1306C;" mx="3" bg="gray.100" px="3.5" py="1.5" borderRadius="50%">
                 <i className="fab fa-instagram"></i>
                 </Link>
 
-                <Link color="#4294ff" mx="3" bg="gray.100" px="4" py="1.5" borderRadius="50%">
+                <Link href="https://www.facebook.com/AWSCloudCommunityLPU" color="#4294ff" mx="3" bg="gray.100" px="4" py="1.5" borderRadius="50%">
                 <i className="fab fa-facebook-f"></i>
                 </Link>   
             </Center>

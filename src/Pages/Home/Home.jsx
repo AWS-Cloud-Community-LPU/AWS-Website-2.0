@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Container, Box, SimpleGrid, Heading, Text, Button, Image, Center } from "@chakra-ui/react";
 import HillImg from "../../Assets/Home/hill.png";
 import HouseImg from "../../Assets/Home/house.png";
@@ -6,7 +7,6 @@ import SunImg from "../../Assets/Home/sun.png";
 import BirdImgOne from "../../Assets/Home/birds1.png";
 import AWSImg from "../../Assets/Home/aws11.jpg";
 import CloudComputingImg from "../../Assets/Home/aws22.jpg";
-import EventImg from "../../Assets/Home/EC2.jfif";
 import ResourceImg from "../../Assets/Home/resources.png";
 import { db } from "../../firebase";
 
@@ -41,12 +41,16 @@ const Home = () => {
                     </Text>
 
                     <Box mt="6">
+                        <Link to="/about">
                         <Button w="9rem" mr="4" colorScheme="orange" variant="solid">
                             Read more
                         </Button>
+                        </Link>
+                        <Link to="/contact">
                         <Button w="9rem" colorScheme="orange" variant="outline">
                             Get in touch
                         </Button>
+                        </Link>
                     </Box>
 
                 </Box>
