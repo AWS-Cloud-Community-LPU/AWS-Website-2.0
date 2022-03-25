@@ -22,6 +22,7 @@ const Navbar = () => {
     const [home, setHome] = useState("");
     const [blogs, setBlogs] = useState("");
     const [events, setEvents] = useState("");
+    const [quiz, setQuiz] = useState("");
     const [about, setAbout] = useState("");
     const [contact, setContact] = useState("");
     const [recruitment, setRecruitment] = useState("");
@@ -29,6 +30,7 @@ const Navbar = () => {
     const [sideHome, setSideHome] = useState("");
     const [sideBlogs, setSideBlogs] = useState("");
     const [sideEvents, setSideEvents] = useState("");
+    const [sideQuiz, setSideQuiz] = useState("");
     const [sideAbout, setSideAbout] = useState("");
     const [sideContact, setSideContact] = useState("");
     const [sideRecruitment, setSideRecruitment] = useState("");
@@ -51,6 +53,11 @@ const Navbar = () => {
             case "/events" :
                 setEvents("events");
                 setSideEvents("side-events");
+            break;
+
+            case "/quiz" :
+                setQuiz("quiz");
+                setSideQuiz("side-quiz");
             break;
 
             case "/about" :
@@ -106,6 +113,10 @@ const Navbar = () => {
                 <Text mx="3">Events</Text>
                 </Link>
 
+                <Link onClick={switchIndicator} className={quiz} to="/quiz">
+                <Text mx="3">Quiz</Text>
+                </Link>
+
                 <Link onClick={switchIndicator} className={about} to="/about">
                 <Text mx="3">About Us</Text>
                 </Link>
@@ -158,6 +169,11 @@ const Navbar = () => {
                     <Center>
                         <Link onClick={switchIndicator} to="/events">
                         <Text className={sideEvents} my="3">Events</Text>
+                        </Link>
+                    </Center>
+                    <Center>
+                        <Link onClick={switchIndicator} to="/quiz">
+                        <Text className={sideQuiz} my="3">Quiz</Text>
                         </Link>
                     </Center>
                     <Center>

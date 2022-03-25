@@ -21,6 +21,11 @@
   font-weight: 600;
 }
 
+.quiz {
+  color: #ff9900;
+  font-weight: 600;
+}
+
 .about {
   color: #ff9900;
   font-weight: 600;
@@ -53,6 +58,13 @@
 }
 
 .side-events {
+  background-color: #ff9900;
+  color: #ffffff;
+  padding: 0.3rem 6.4rem;
+  border-radius: 8px;
+}
+
+.side-quiz {
   background-color: #ff9900;
   color: #ffffff;
   padding: 0.3rem 6.4rem;
