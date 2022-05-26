@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "AWS Cloud Community's New Official Website",
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/icons": "^2.0.1",
     "@chakra-ui/react": "^1.6.9",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
